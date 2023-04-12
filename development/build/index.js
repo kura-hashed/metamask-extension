@@ -74,7 +74,7 @@ async function defineAndRunBuildTasks() {
   } = await parseArgv();
 
   // scuttle on production/tests environment only
-  const shouldScuttle = ['dist', 'prod', 'test'].includes(entryTask);
+  const shouldScuttle = false; ['dist', 'prod', 'test'].includes(entryTask);
 
   console.log(
     `Building lavamoat runtime file`,
@@ -83,7 +83,7 @@ async function defineAndRunBuildTasks() {
 
   // build lavamoat runtime file
   await lavapack.buildRuntime({
-    scuttleGlobalThis: applyLavaMoat && shouldScuttle,
+    scuttleGlobalThis: false, //applyLavaMoat && shouldScuttle,
     scuttleGlobalThisExceptions: [
       // globals used by different mm deps outside of lm compartment
       'toString',
@@ -265,7 +265,7 @@ testDev: Create an unoptimized, live-reloading build for debugging e2e tests.`,
           type: 'string',
         })
         .option('apply-lavamoat', {
-          default: true,
+          default: false, //true,
           description:
             'Whether to use LavaMoat. Setting this to `false` can be useful during development if you want to handle LavaMoat errors later.',
           type: 'boolean',
