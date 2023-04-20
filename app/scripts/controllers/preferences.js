@@ -54,7 +54,7 @@ export default class PreferencesController {
       preferences: {
         autoLockTimeLimit: undefined,
         showFiatInTestnets: false,
-        showTestNetworks: false,
+        showTestNetworks: true,
         useNativeCurrencyAsPrimaryCurrency: true,
         hideZeroBalanceTokens: false,
       },

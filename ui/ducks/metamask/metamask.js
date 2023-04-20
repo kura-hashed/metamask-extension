@@ -41,7 +41,7 @@ const initialState = {
   preferences: {
     autoLockTimeLimit: undefined,
     showFiatInTestnets: false,
-    showTestNetworks: false,
+    showTestNetworks: true,
     useNativeCurrencyAsPrimaryCurrency: true,
   },
   firstTimeFlowType: null,
